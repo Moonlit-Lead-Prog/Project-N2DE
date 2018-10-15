@@ -76,52 +76,6 @@ void Game::update()
 {
 	player->Update();
 
-	counterNum++;
-
-	/*
-	lastMoveTime = SDL_GetTicks();
-	timePassed = SDL_GetTicks() - lastMoveTime;
-
-	std::cout << "Last Move: " << lastMoveTime << ": timePassed:" << timePassed << std::endl;
-
-	if (lastMoveTime > timePassed)
-	{
-		SDL_Delay(500 - timePassed);
-	}
-
-	if (walkRight)
-	{
-		destR.x = destR.x + 64;
-		destR.y = 100;
-		
-		if (destR.x > 600)
-		{
-			walkRight = false;
-		}
-	}
-	else
-	{
-		destR.x = destR.x - 64;
-		destR.y = 100;
-
-		if (destR.x < 100)
-		{
-			walkRight = true;
-		}
-	}
-
-
-	destR.h = 64;
-	destR.w = 64;
-
-	tileR.h = 64;
-	tileR.w = 64;
-
-
-	//std::cout << counterNum << std::endl;
-	*/
-
-	std::cout << counterNum << std::endl;
 }
 
 void Game::render()

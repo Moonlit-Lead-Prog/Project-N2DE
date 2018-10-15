@@ -1,12 +1,12 @@
 #include "Map.h"
 #include "TextureManager.h"
 
-int lvl1[20][25] = { 
-	{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-	{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-	{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-	{0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-	{0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+int tempMap[20][25] = { 
+	{2,2,2,2,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+	{2,2,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+	{2,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+	{1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+	{1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 	{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 	{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 	{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
@@ -28,7 +28,9 @@ Map::Map()
 {
 	dirt = TextureManager::LoadTexture("assets/Dirt1.png");
 	grass = TextureManager::LoadTexture("assets/Grass1.png");
-	water = TextureManager::LoadTexture("assets/char.png");
+	water = TextureManager::LoadTexture("assets/Water1.png");
+
+	LoadMap(tempMap);
 }
 
 void Map::LoadMap(int arr[20][25])
@@ -42,8 +44,8 @@ void Map::LoadMap(int arr[20][25])
 	}
 
 	src.x = src.y = 0;
-	src.w = dest.h = 32;
-	src.h = dest.h = 32;
+	src.w = dest.w = 64;
+	src.h = dest.h = 64;
 
 	dest.x = dest.y = 0;
 }
@@ -58,8 +60,8 @@ void Map::DrawMap()
 		{
 			type = map[row][column];
 
-			dest.x = column * 32;
-			dest.y = row * 32;
+			dest.x = column * 64;
+			dest.y = row * 64;
 
 			switch (type)
 			{
