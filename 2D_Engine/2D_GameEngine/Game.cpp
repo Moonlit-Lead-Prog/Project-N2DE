@@ -3,6 +3,9 @@
 #include "GameObject.h"
 #include "Map.h"
 
+#include "ECS.h"
+#include "Components.h"
+
 #undef main
 
 GameObject* player;
@@ -15,6 +18,9 @@ SDL_Texture* playerTex;
 SDL_Rect tileR;
 
 SDL_Renderer* Game::renderer = nullptr;
+
+Manager manager;
+auto& newPlayer(manager.addEntity());
 
 Game::Game() 
 {}
@@ -49,6 +55,9 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 	player = new GameObject("assets/char.png", 0, 0);
 	map = new Map();
+
+	newPlayer.addComponent<PositionComponent>();
+	newPlayer.getComponent<PositionComponent>().setPos(500, 500);
 }
 
 void Game::handleEvents()
@@ -75,7 +84,9 @@ int counterNum = 0;
 void Game::update()
 {
 	player->Update();
-
+	manager.update();
+	std::cout << newPlayer.getComponent<PositionComponent>().x() << "," << 
+		newPlayer.getComponent<PositionComponent>().y() << std::endl;
 }
 
 void Game::render()
