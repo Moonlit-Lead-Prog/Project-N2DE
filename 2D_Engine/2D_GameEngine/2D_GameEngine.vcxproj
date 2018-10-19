@@ -19,18 +19,20 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Engine\Additions\Vector2D.cpp" />
     <ClCompile Include="Game.cpp" />
-    <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Components.h" />
+    <ClInclude Include="Engine\Additions\Vector2.h" />
+    <ClInclude Include="Engine\ECS\Components.h" />
     <ClInclude Include="config.h" />
-    <ClInclude Include="ECS.h" />
+    <ClInclude Include="Engine\ECS\ECS.h" />
+    <ClInclude Include="Engine\ECS\TransformComponent.h" />
+    <ClInclude Include="Engine\ECS\SpriteComponent.h" />
     <ClInclude Include="Game.h" />
-    <ClInclude Include="GameObject.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="TextureManager.h" />
   </ItemGroup>
@@ -39,6 +41,13 @@
     <None Include="SDL2.dll" />
     <None Include="SDL2_image.dll" />
     <None Include="zlib1.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\char.png" />
+    <Image Include="assets\char2.png" />
+    <Image Include="assets\Dirt1.png" />
+    <Image Include="assets\Grass1.png" />
+    <Image Include="assets\Water1.png" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

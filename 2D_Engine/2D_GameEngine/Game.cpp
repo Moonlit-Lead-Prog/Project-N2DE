@@ -1,15 +1,13 @@
 #include "Game.h"
 #include "TextureManager.h"
-#include "GameObject.h"
 #include "Map.h"
 
-#include "ECS.h"
-#include "Components.h"
+#include "Engine/ECS/Components.h"
+#include "Engine/Additions/Vector2.h"
+
 
 #undef main
 
-GameObject* player;
-GameObject* tileTex;
 Map* map;
 
 SDL_Texture* playerTex;
@@ -20,7 +18,7 @@ SDL_Rect tileR;
 SDL_Renderer* Game::renderer = nullptr;
 
 Manager manager;
-auto& newPlayer(manager.addEntity());
+auto& player(manager.addEntity());
 
 Game::Game() 
 {}
@@ -53,11 +51,11 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	}
 	else isRunning = false;
 
-	player = new GameObject("assets/char.png", 0, 0);
 	map = new Map();
 
-	newPlayer.addComponent<PositionComponent>();
-	newPlayer.getComponent<PositionComponent>().setPos(500, 500);
+	player.addComponent<TransformComponent>(0,0);
+	player.addComponent<SpriteComponent>("assets/char.png");
+
 }
 
 void Game::handleEvents()
@@ -83,20 +81,24 @@ int counterNum = 0;
 
 void Game::update()
 {
-	player->Update();
+	manager.refresh();
 	manager.update();
-	std::cout << newPlayer.getComponent<PositionComponent>().x() << "," << 
-		newPlayer.getComponent<PositionComponent>().y() << std::endl;
+
+	//player.getComponent<TransformComponent>().position.Add(Vector2(5, 0));
+
+
+	if (player.getComponent<TransformComponent>().position.x > 200)
+	{
+		player.getComponent<SpriteComponent>().setTex("assets/Dirt1.png");
+	}
+
 }
 
 void Game::render()
 {
 	SDL_RenderClear(renderer);
-
 	map->DrawMap();
-
-	player->Render();
-
+	manager.draw();
 	SDL_RenderPresent(renderer);
 }
 

@@ -1,2 +1,4 @@
 ﻿  Game.cpp
+c:\users\unityingames\desktop\project-n2de\2d_engine\2d_gameengine\engine\ecs\transformcomponent.h(20): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\unityingames\desktop\project-n2de\2d_engine\2d_gameengine\engine\ecs\transformcomponent.h(21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   2D_GameEngine.vcxproj -> C:\Users\UnityInGames\Desktop\Project-N2DE\2D_Engine\x64\Debug\2D_GameEngine.exe
