@@ -4,3 +4,8 @@ image: Visual Studio 2017
 
 build:
   verbosity: normal
+  
+install:
+  - ps: Start-FileDownload https://www.libsdl.org/release/SDL2-devel-2.0.8-VC.zip -FileName sdl2.zip
+  - ps: Expand-Archive sdl2.zip -DestinationPath sdl2
+  - set LIB=%LIB%;C:\projects\sdl2\SDL2-2.0.8\lib\64
