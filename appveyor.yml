@@ -2,10 +2,6 @@ configuration: Release
 
 image: Visual Studio 2017
 
-artifacts:
-- path: https://www.libsdl.org/release/SDL2-devel-2.0.8-VC.zip
-- path: https://www.libsdl.org/projects/SDL_image/release/SDL2_image-devel-2.0.3-VC.zip
-
 environment:
   SDL2_IDIR: c:\mylibs\include\SDL2
 
@@ -17,10 +13,8 @@ install:
   - |-
     %DEPENDS% appveyor DownloadFile https://www.libsdl.org/release/SDL2-devel-2.0.8-VC.zip
     %DEPENDS% appveyor DownloadFile https://www.libsdl.org/projects/SDL_image/release/SDL2_image-devel-2.0.3-VC.zip
-  - |-
     %DEPENDS% 7z x SDL2-devel-2.0.8-VC.zip > nul
     %DEPENDS% 7z x SDL2_image-devel-2.0.3-VC.zip > nul
-  - |-
     %DEPENDS% copy SDL2-2.0.8\include\* %SDL2_IDIR% > nul
     %DEPENDS% copy SDL2_image-2.0.3\include\* %SDL2_IDIR% > nul
     %DEPENDS% copy SDL2-2.0.8\lib\x86\* %LIBDIR% > nul
