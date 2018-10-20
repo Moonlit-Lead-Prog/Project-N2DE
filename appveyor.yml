@@ -19,12 +19,12 @@ before_build:
     %DEPENDS% copy SDL2-2.0.8\lib\x64\* %PREFIX%\lib > nul
     
   # SDL2_image
-  - |-
-    %DEPENDS% appveyor DownloadFile https://www.libsdl.org/projects/SDL_image/release/SDL2_image-devel-2.0.3-VC.zip
-    %DEPENDS% 7z x SDL2_image-devel-2.0.3-VC.zip > nul
-    %DEPENDS% copy SDL2-2.0.8\include\SDL2\* %PREFIX%\include\SDL2 > nul
-    %DEPENDS% copy SDL2-2.0.8\lib\*.a %PREFIX%\lib > nul
-    %DEPENDS% copy SDL2-2.0.8\bin\*.dll %PREFIX%\lib > nul
+  # - |-
+    #%DEPENDS% appveyor DownloadFile https://www.libsdl.org/projects/SDL_image/release/SDL2_image-devel-2.0.3-VC.zip
+    #%DEPENDS% 7z x SDL2_image-devel-2.0.3-VC.zip > nul
+    #%DEPENDS% copy SDL2-2.0.8\include\SDL2\* %PREFIX%\include\SDL2 > nul
+    #%DEPENDS% copy SDL2-2.0.8\lib\*.a %PREFIX%\lib > nul
+    #%DEPENDS% copy SDL2-2.0.8\bin\*.dll %PREFIX%\lib > nul
 
 build:
   verbosity: normal
