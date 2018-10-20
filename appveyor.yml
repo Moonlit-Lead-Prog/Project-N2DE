@@ -17,7 +17,6 @@ before_build:
     %DEPENDS% 7z x SDL2-devel-2.0.8-VC.zip > nul
     %DEPENDS% copy SDL2-2.0.8\include\* %PREFIX%\include\SDL2 > nul
     %DEPENDS% copy SDL2-2.0.8\lib\x64\* %PREFIX%\lib > nul
-    %DEPENDS% copy SDL2-2.0.8\bin\x64\* %PREFIX%\lib > nul
     
   # SDL2_image
   - |-
