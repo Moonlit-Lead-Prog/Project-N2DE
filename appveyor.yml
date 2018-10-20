@@ -21,6 +21,15 @@ install:
   - 7z x SDL2-devel-2.0.8-VC.zip > nul 
   - echo y | xcopy SDL2-2.0.8\* %ENGINE_Path%\ /S
   
+  
+before_build:
+  - .\build\windows\get-sdl2-dlls.bat dll "appveyor DownloadFile"
+  - set Path=%ENGINE_Path%\bin;%Path%
+  #- if "%APPVEYOR_REPO_TAG%"=="true" (set CMAKE_BUILD_TYPE=Release) else (set CMAKE_BUILD_TYPE=Debug)
+  #- cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=%CMAKE_BUILD_TYPE% -D CMAKE_C_COMPILER=mingw32-gcc.exe -D CMAKE_MAKE_PROGRAM=mingw32-make.exe .
+
+cache:
+- SDL2-devel-2.0.8-VC.zip
 
 build:
   verbosity: normal
