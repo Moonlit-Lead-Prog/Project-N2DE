@@ -7,8 +7,8 @@ image: Visual Studio 2017
 environment:
   CTEST_OUTPUT_ON_FAILURE: 1
   ENGINE_Path: C:\projects\project-n2de
-  SDL2_DIR: %ENGINE_Path%\2D_Engine\Dependencies\SDL2\
-  SDL2IMG_DIR: %ENGINE_Path%\2D_Engine\Dependencies\SDL2_image\
+  SDL2_DIR: C:\projects\project-n2de\2D_Engine\Dependencies\SDL2\
+  SDL2IMG_DIR: C:\projects\project-n2de\2D_Engine\Dependencies\SDL2_image\
 
 platform:
   - x64
