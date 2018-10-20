@@ -3,5 +3,4 @@ configuration: Release
 image: Visual Studio 2017
 
 build:
-  verbosity: minimal
-  publish_wap: true
+  verbosity: normal
