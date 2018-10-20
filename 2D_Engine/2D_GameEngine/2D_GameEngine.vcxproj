@@ -28,8 +28,8 @@
   <ItemGroup>
     <ClInclude Include="Engine\Additions\Vector2.h" />
     <ClInclude Include="Engine\ECS\Components.h" />
-    <ClInclude Include="config.h" />
     <ClInclude Include="Engine\ECS\ECS.h" />
+    <ClInclude Include="Engine\ECS\KeyboardController.h" />
     <ClInclude Include="Engine\ECS\TransformComponent.h" />
     <ClInclude Include="Engine\ECS\SpriteComponent.h" />
     <ClInclude Include="Game.h" />

@@ -5,19 +5,12 @@
 #include "Engine/ECS/Components.h"
 #include "Engine/Additions/Vector2.h"
 
-
-#undef main
-
 Map* map;
-
-SDL_Texture* playerTex;
-
-
-SDL_Rect tileR;
+Manager manager;
 
 SDL_Renderer* Game::renderer = nullptr;
+SDL_Event Game::event;
 
-Manager manager;
 auto& player(manager.addEntity());
 
 Game::Game() 
@@ -55,12 +48,11 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 	player.addComponent<TransformComponent>(0,0);
 	player.addComponent<SpriteComponent>("assets/char.png");
-
+	player.addComponent<keyboardController>();
 }
 
 void Game::handleEvents()
 {
-	SDL_Event event;
 	SDL_PollEvent(&event);
 	switch (event.type)
 	{
@@ -84,13 +76,9 @@ void Game::update()
 	manager.refresh();
 	manager.update();
 
-	//player.getComponent<TransformComponent>().position.Add(Vector2(5, 0));
 
 
-	if (player.getComponent<TransformComponent>().position.x > 200)
-	{
-		player.getComponent<SpriteComponent>().setTex("assets/Dirt1.png");
-	}
+	//player.getComponent<SpriteComponent>().setTex("assets/Dirt1.png");
 
 }
 
