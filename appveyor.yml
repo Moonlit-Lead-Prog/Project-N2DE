@@ -10,6 +10,7 @@ install:
   - cd %TEMP%
   
   # SDL2
+   - |-
   %DEPENDS% appveyor DownloadFile https://www.libsdl.org/release/SDL2-devel-2.0.8-VC.zip
   %DEPENDS% appveyor DownloadFile https://www.libsdl.org/projects/SDL_image/release/SDL2_image-devel-2.0.3-VC.zip
   %DEPENDS% 7z x SDL2-devel-2.0.8-VC.zip > nul
