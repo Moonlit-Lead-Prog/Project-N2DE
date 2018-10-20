@@ -5,7 +5,7 @@ image: Visual Studio 2017
 environment:
   SDL2_IDIR: c:\mylibs\include\SDL2
 
-install
+install:
   - mkdir %SDL2_IDIR%
   - cd %TEMP%
   
