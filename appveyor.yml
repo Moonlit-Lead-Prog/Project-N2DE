@@ -2,29 +2,23 @@ configuration: Release
 
 image: Visual Studio 2017
 
+environment:
+  SDL2_IDIR: c:\mylibs\include\SDL2
 
-before_build:
-  - set PREFIX=C:\engine
-  
-  - |-
-    %DEPENDS% mkdir %PREFIX%\include\SDL2
-    %DEPENDS% mkdir %PREFIX%\lib
-    %DEPENDS% cd %TEMP%
+install
+  - mkdir %SDL2_IDIR%
+  - cd %TEMP%
   
   # SDL2
-  - |-
-    %DEPENDS% appveyor DownloadFile https://www.libsdl.org/release/SDL2-devel-2.0.8-VC.zip
-    %DEPENDS% 7z x SDL2-devel-2.0.8-VC.zip > nul
-    %DEPENDS% copy SDL2-2.0.8\include\* %PREFIX%\include\SDL2 > nul
-    %DEPENDS% copy SDL2-2.0.8\lib\x64\* %PREFIX%\lib > nul
-    
-  # SDL2_image
-  # - |-
-    #%DEPENDS% appveyor DownloadFile https://www.libsdl.org/projects/SDL_image/release/SDL2_image-devel-2.0.3-VC.zip
-    #%DEPENDS% 7z x SDL2_image-devel-2.0.3-VC.zip > nul
-    #%DEPENDS% copy SDL2-2.0.8\include\SDL2\* %PREFIX%\include\SDL2 > nul
-    #%DEPENDS% copy SDL2-2.0.8\lib\*.a %PREFIX%\lib > nul
-    #%DEPENDS% copy SDL2-2.0.8\bin\*.dll %PREFIX%\lib > nul
+  %DEPENDS% appveyor DownloadFile https://www.libsdl.org/release/SDL2-devel-2.0.8-VC.zip
+  %DEPENDS% appveyor DownloadFile https://www.libsdl.org/projects/SDL_image/release/SDL2_image-devel-2.0.3-VC.zip
+  %DEPENDS% 7z x SDL2-devel-2.0.8-VC.zip > nul
+  %DEPENDS% 7z x SDL2_image-devel-2.0.3-VC.zip > nul
+  %DEPENDS% copy SDL2-2.0.8\include\* %SDL2_IDIR% > nul
+  %DEPENDS% copy SDL2_image-2.0.3\include\* %SDL2_IDIR% > nul
+  %DEPENDS% copy SDL2-2.0.8\lib\x86\* %LIBDIR% > nul
+  %DEPENDS% copy SDL2_image-2.0.3\lib\x86\* %LIBDIR% > nul
+  
 
 build:
   verbosity: normal
