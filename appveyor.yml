@@ -6,9 +6,8 @@ build:
   verbosity: normal
   
 install:
-  - ps: Start-FileDownload https://www.libsdl.org/release/SDL2-devel-2.0.8-VC.zip -FileName sdl2.zip
-  - ps: Expand-Archive sdl2.zip -DestinationPath C:\projects\sdl2
-  - set LIB=%LIB%;C:\projects\sdl2\SDL2-2.0.8\lib\64
+  - ps: Start-FileDownload https://www.libsdl.org/release/SDL2-devel-2.0.8-VC.zip -FileName SDL2.zip
+  - cd C:\projects\ && 7z x SDL2.zip && ren SDL2-2.0.4 SDL2 && cd ..\..
   
   - ps: Start-FileDownload https://www.libsdl.org/projects/SDL_image/release/SDL2_image-devel-2.0.3-VC.zip -FileName sdl2image.zip
   - ps: Expand-Archive sdl2.zip -DestinationPath C:\projects\sdl2image
