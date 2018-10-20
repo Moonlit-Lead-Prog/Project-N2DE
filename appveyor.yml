@@ -2,6 +2,10 @@ configuration: Release
 
 image: Visual Studio 2017
 
+artifacts:
+- path: https://www.libsdl.org/release/SDL2-devel-2.0.8-VC.zip
+- path: https://www.libsdl.org/projects/SDL_image/release/SDL2_image-devel-2.0.3-VC.zip
+
 environment:
   SDL2_IDIR: c:\mylibs\include\SDL2
 
