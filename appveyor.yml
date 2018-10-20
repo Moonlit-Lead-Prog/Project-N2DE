@@ -7,7 +7,7 @@ build:
   
 install:
   - ps: Start-FileDownload https://www.libsdl.org/release/SDL2-devel-2.0.8-VC.zip 'dependencies/SDL2.zip'
-  - ps: Expand-Archive SDL2.zip -DestinationPath dependencies\
+  - ps: Expand-Archive dependencies/SDL2.zip -DestinationPath dependencies\
   - set LIB=%LIB%;C:\dependencies\SDL2_image-2.0.3\lib\64
   
   - ps: Start-FileDownload https://www.libsdl.org/projects/SDL_image/release/SDL2_image-devel-2.0.3-VC.zip -FileName sdl2image.zip
