@@ -118,10 +118,10 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\UnityInGames\Desktop\Project-N2DE\Dependencies\SDL2_image\include;C:\Users\UnityInGames\Desktop\Project-N2DE\Dependencies\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\UnityInGames\Desktop\Project-N2DE\2D_Engine\Dependencies\SDL2\include;C:\Users\UnityInGames\Desktop\Project-N2DE\2D_Engine\Dependencies\SDL2_image\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>C:\Users\UnityInGames\Desktop\Project-N2DE\Dependencies\SDL2_image\lib\x64;C:\Users\UnityInGames\Desktop\Project-N2DE\Dependencies\SDL2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\UnityInGames\Desktop\Project-N2DE\2D_Engine\Dependencies\SDL2_image\lib\x64;C:\Users\UnityInGames\Desktop\Project-N2DE\2D_Engine\Dependencies\SDL2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
