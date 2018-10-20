@@ -7,6 +7,7 @@ image: Visual Studio 2017
 environment:
   CTEST_OUTPUT_ON_FAILURE: 1
   SDL2_IDIR: c:\mylibs\include\SDL2
+  ENGINE_Path: C:\project
 
 platform:
   - x64
@@ -18,11 +19,7 @@ install:
   # SDL2
   - IF NOT EXIST SDL2-devel-2.0.8-VC.zip appveyor DownloadFile https://www.libsdl.org/release/SDL2-devel-2.0.8-VC.zip
   - 7z x SDL2-devel-2.0.8-VC.zip > nul 
-  - echo y | xcopy SDL2-devel-2.0.8-VC.zip
-  
-  - IF NOT EXIST SDL2_image-devel-2.0.3-VC.zip appveyor DownloadFile https://www.libsdl.org/projects/SDL_image/release/SDL2_image-devel-2.0.3-VC.zip
-  - 7z x SDL2_image-devel-2.0.3-VC.zip > nul 
-  - echo y | xcopy SDL2_image-devel-2.0.3-VC.zip
+  - echo y | xcopy SDL2-2.0.8\* %ENGINE_Path%\ /S
   
 
 build:
