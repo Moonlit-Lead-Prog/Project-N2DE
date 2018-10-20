@@ -4,34 +4,11 @@ configuration: Release
 
 image: Visual Studio 2017
 
-environment:
-  CTEST_OUTPUT_ON_FAILURE: 1
-  #ENGINE_Path: C:\projects\project-n2de
-  SDL2_DIR: C:\projects\project-n2de\2D_Engine\Dependencies\SDL2\
-  SDL2IMG_DIR: C:\projects\project-n2de\2D_Engine\Dependencies\SDL2_image\
-
-platform:
-  - x64
-
 install:
-  #- mkdir %SDL2_IDIR%
-  #- cd %TEMP%
+  appveyor DownloadFile https://www.libsdl.org/release/SDL2-devel-2.0.8-VC.zip 
+  appveyor DownloadFile https://www.libsdl.org/projects/SDL_image/release/SDL2_image-devel-2.0.3-VC.zip 
   
-  # SDL2
-  - IF NOT EXIST SDL2-devel-2.0.8-VC.zip appveyor DownloadFile https://www.libsdl.org/release/SDL2-devel-2.0.8-VC.zip
-  - 7z x SDL2-devel-2.0.8-VC.zip > nul 
-  - echo y | xcopy SDL2-2.0.8\* %ENGINE_Path%\ /S
+  7z x SDL2-devel-2.0.8-VC.zip > nul 
   
-  
-before_build:
-- set Path= C:\projects\project-n2de\2D_Engine\2D_GameEngine\
-  #- .\build\windows\get-sdl2-dlls.bat dll "appveyor DownloadFile"
-  #- set Path=%ENGINE_Path%\bin;%Path%
-  #- if "%APPVEYOR_REPO_TAG%"=="true" (set CMAKE_BUILD_TYPE=Release) else (set CMAKE_BUILD_TYPE=Debug)
-  #- cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=%CMAKE_BUILD_TYPE% -D CMAKE_C_COMPILER=mingw32-gcc.exe -D CMAKE_MAKE_PROGRAM=mingw32-make.exe .
-
-cache:
-  #- SDL2-devel-2.0.8-VC.zip
-
 build:
   verbosity: normal
