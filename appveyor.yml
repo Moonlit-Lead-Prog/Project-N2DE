@@ -12,14 +12,14 @@ environment:
     MINGW32: rem
 
 before_build:
-- |-
-   %NEEDDEPENDS% mkdir %PREFIX%\include\SDL2
-   %NEEDDEPENDS% mkdir %PREFIX%\lib
-   
-   %NEEDDEPENDS% appveyor DownloadFile http://www.libsdl.org/release/SDL2-devel-2.0.8-VC.zip
-   %NEEDDEPENDS% 7z x SDL2-devel-2.0.8-VC.zip > nul
-   %NEEDDEPENDS% copy SDL2-2.0.8\include\*  %PREFIX%\include > nul
-   %NEEDDEPENDS% copy SDL2-2.0.8\lib\x64\*  %PREFIX%\lib > nul
+- |-   
+  - ps: "Start-FileDownload https://www.libsdl.org/release/SDL2-devel-$($env:SDL2_VERSION)-VC.zip"
+  - cmd: "7z x SDL2-devel-%SDL2_VERSION%-VC.zip"
+  - ps: "Start-FileDownload https://www.libsdl.org/projects/SDL_image/release/SDL2_image-devel-$($env:SDL2_IMAGE_VERSION)-VC.zip"
+  - cmd: "7z x SDL2_image-devel-%SDL2_IMAGE_VERSION%-VC.zip"
+  
+  - cmd: "set SDL2_DEVEL_PATH=%APPVEYOR_BUILD_FOLDER%\\SDL2-%SDL2_VERSION%"
+  - cmd: "set PATH=C:\\MinGW\\bin;%PATH%"
   
 build:
   project: C:\projects\project-n2de\2D_Engine\2D_Engine.sln
