@@ -12,10 +12,11 @@ environment:
     MINGW32: rem
 
 before_build:  
-  - ps: "Start-FileDownload https://www.libsdl.org/release/SDL2-devel-$($env:SDL2_VERSION)-VC.zip"
-  - cmd: "7z x SDL2-devel-%SDL2_VERSION%-VC.zip"
-  - ps: "Start-FileDownload https://www.libsdl.org/projects/SDL_image/release/SDL2_image-devel-$($env:SDL2_IMAGE_VERSION)-VC.zip"
-  - cmd: "7z x SDL2_image-devel-%SDL2_IMAGE_VERSION%-VC.zip"
+  - ps: "Start-FileDownload https://www.libsdl.org/release/SDL2-devel-2.0.8-VC.zip"
+  - cmd: "7z x SDL2-devel-2.0.8-VC.zip"
+  
+  - ps: "Start-FileDownload https://www.libsdl.org/projects/SDL_image/release/SDL2_image-devel-2.0.3-VC.zip"
+  - cmd: "7z x SDL2_image-devel-2.0.3-VC.zip"
   
   - cmd: "set SDL2_DEVEL_PATH=%APPVEYOR_BUILD_FOLDER%\\SDL2-%SDL2_VERSION%"
   - cmd: "set PATH=C:\\MinGW\\bin;%PATH%"
