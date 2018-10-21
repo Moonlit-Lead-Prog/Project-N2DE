@@ -8,16 +8,14 @@ clone_depth: 1
 
 before_build:
    - |-
-    set PREFIX=C:\usr
-   - |-
     %DEPENDS% mkdir %PREFIX%\include\SDL2
     %DEPENDS% mkdir %PREFIX%\lib
     %DEPENDS% cd %TEMP%
     
     %DEPENDS% appveyor DownloadFile https://www.libsdl.org/release/SDL2-devel-2.0.8-VC.zip
     %DEPENDS% 7z x SDL2-devel-2.0.8-VC.zip > nul
-    %DEPENDS% copy SDL2-2.0.8\include\SDL2\* %PREFIX%\include > nul
-    %DEPENDS% copy SDL2-2.0.8\lib\x64\*.a %PREFIX%\lib > nul
+    %DEPENDS% copy SDL2-2.0.8\include\SDL2\* C:\projects\project-n2de\2D_Engine\2D_GameEngine > nul
+    %DEPENDS% copy SDL2-2.0.8\lib\x64\*.a C:\projects\project-n2de\2D_Engine\2D_GameEngine > nul
 
 build_script:
   - |-
