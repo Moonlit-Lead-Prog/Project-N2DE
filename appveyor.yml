@@ -8,7 +8,8 @@ clone_depth: 1
 
 before_build:
    - |-
-     set PREFIX=C:\usr
+    set PREFIX=C:\usr
+   - |-
     %DEPENDS% mkdir %PREFIX%\include\SDL2
     %DEPENDS% mkdir %PREFIX%\lib
     %DEPENDS% cd %TEMP%
