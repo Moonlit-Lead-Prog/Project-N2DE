@@ -15,13 +15,13 @@ before_build:
   # depends are only fetched where there's no cache
   #- if exist %PREFIX% set DEPENDS=rem
   
-  - |-
+  #- |-
     %DEPENDS% mkdir %PREFIX%\include\SDL2
     %DEPENDS% mkdir %PREFIX%\lib
     %DEPENDS% cd %TEMP%
     
   #SDL2
-  - |-
+  #- |-
     %DEPENDS% appveyor DownloadFile https://www.libsdl.org/release/SDL2-devel-2.0.8-VC.zip
     %DEPENDS% 7z x SDL2-devel-2.0.8-VC.zip > nul
     %DEPENDS% copy SDL2-2.0.8\%ARCH%\include\SDL2\* %PREFIX%\include\SDL2 > nul
