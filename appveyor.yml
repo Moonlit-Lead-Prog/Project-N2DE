@@ -24,15 +24,3 @@ before_build:
 build:
   project: C:\projects\project-n2de\2D_Engine\2D_Engine.sln
   verbosity: normal
-
-build_script:
-- |-
-   cd %APPVEYOR_BUILD_FOLDER%
-   
-   %MINGW32% type FindSDL2PP.cmake
-   %MINGW32% type sdl2pp.pc
-    
-   set PATH=%PREFIX%\lib;%PATH%
-   %MSVC% set PATH=%APPVEYOR_BUILD_FOLDER%\Debug;%PATH%
-   %MINGW32% set PATH=%APPVEYOR_BUILD_FOLDER%;%PATH%
-   ctest -V
