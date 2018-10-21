@@ -19,7 +19,7 @@ before_build:
   - cmd: "7z x SDL2_image-devel-2.0.3-VC.zip"
   
   - cmd: "set SDL2_PATH=%APPVEYOR_BUILD_FOLDER%\\SDL2-devel-2.0.8-VC"
-  - cmd: "set PATH=C:\\MinGW\\bin;%PATH%"
+  - cmd: "set PATH=C:\projects\project-n2de"
   
 build:
   project: C:\projects\project-n2de\2D_Engine\2D_Engine.sln
