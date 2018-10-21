@@ -30,4 +30,3 @@ build_script:
    set PATH=%PREFIX%\lib;%PATH%
    %MSVC% set PATH=%APPVEYOR_BUILD_FOLDER%\Debug;%PATH%
    %MINGW32% set PATH=%APPVEYOR_BUILD_FOLDER%;%PATH%
-   ctest -V
