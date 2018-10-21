@@ -1,6 +1,6 @@
 version: D0.1.{build}
 
-configuration: Debug
+configuration: Release
 
 image: Visual Studio 2017
    
