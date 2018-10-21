@@ -17,8 +17,6 @@ before_build:
    %NEEDDEPENDS% copy SDL2-2.0.8\include\*  %PREFIX%\include > nul
    %NEEDDEPENDS% copy SDL2-2.0.8\lib\x64\*  %PREFIX%\lib > nul
   
-  7z x SDL2-devel-2.0.8-VC.zip > nul 
-  
 build:
   project: 2D_Engine.sln
   verbosity: normal
