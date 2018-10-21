@@ -20,8 +20,3 @@ build_script:
   - |-
     cd %APPVEYOR_BUILD_FOLDER%
     del "C:\Program Files\Git\usr\bin\sh.exe"
-
-# Build
-  - |-
-    copy %PREFIX%\lib\SDL2.dll C:\project-n2de
-    copy %PREFIX%\lib\SDL2_image.dll C:\project-n2de
