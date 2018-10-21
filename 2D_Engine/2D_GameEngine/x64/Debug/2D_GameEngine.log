@@ -1,13 +1,1 @@
-﻿  Vector2D.cpp
-  Game.cpp
-c:\users\unityingames\desktop\project-n2de\2d_engine\2d_gameengine\engine\ecs\transformcomponent.h(23): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\unityingames\desktop\project-n2de\2d_engine\2d_gameengine\engine\ecs\transformcomponent.h(24): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\unityingames\desktop\project-n2de\2d_engine\2d_gameengine\engine\ecs\transformcomponent.h(38): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-c:\users\unityingames\desktop\project-n2de\2d_engine\2d_gameengine\engine\ecs\transformcomponent.h(39): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-c:\users\unityingames\desktop\project-n2de\2d_engine\2d_gameengine\engine\ecs\keyboardcontroller.h(29): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-c:\users\unityingames\desktop\project-n2de\2d_engine\2d_gameengine\engine\ecs\keyboardcontroller.h(30): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-  main.cpp
-  Map.cpp
-  TextureManager.cpp
-  Generating Code...
-  2D_GameEngine.vcxproj -> C:\Users\UnityInGames\Desktop\Project-N2DE\2D_Engine\x64\Debug\2D_GameEngine.exe
+﻿  2D_GameEngine.vcxproj -> C:\Users\UnityInGames\Desktop\Project-N2DE\2D_Engine\x64\Debug\2D_GameEngine.exe
