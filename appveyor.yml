@@ -10,7 +10,7 @@ before_build:
    - |-
      set PREFIX=C:\usr
      
-  - git submodule update --init --recursive
+  #- git submodule update --init --recursive
   
   # depends are only fetched where there's no cache
   - if exist %PREFIX% set DEPENDS=rem
