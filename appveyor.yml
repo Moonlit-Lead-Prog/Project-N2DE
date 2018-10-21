@@ -12,13 +12,11 @@ environment:
     MINGW32: rem
 
 before_build:  
-  - ps: "Start-FileDownload https://www.libsdl.org/release/SDL2-devel-2.0.8-VC.zip"
-  - cmd: "7z x SDL2-devel-2.0.8-VC.zip"
-  
-  - ps: "Start-FileDownload https://www.libsdl.org/projects/SDL_image/release/SDL2_image-devel-2.0.3-VC.zip"
-  - cmd: "7z x SDL2_image-devel-2.0.3-VC.zip"
-  
-  - cmd: "set SDL2_DEVEL_PATH=%APPVEYOR_BUILD_FOLDER%\\SDL2-2.0.8"
+  # Install SDL2.
+  - ps: Start-FileDownload https://www.libsdl.org/release/SDL2-devel-2.0.8-VC.zip -FileName sdl2.zip
+  - ps: Expand-Archive sdl2.zip -DestinationPath sdl2
+  - set LIB=%LIB%;C:\projects\project-n2de\sdl2\SDL2-2.0.5\lib\x64
+
   
 build:
   project: C:\projects\project-n2de\2D_Engine\2D_Engine.sln
