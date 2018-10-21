@@ -3,9 +3,19 @@ version: D0.1.{build}
 configuration: Debug
 
 image: Visual Studio 2017
-    
+   
+platform: x64
+
 environment:
+    matrix:
+  - CMAKE_ARGS: -DSDL2PP_ENABLE_LIVE_TESTS=OFF -DCMAKE_CXX_FLAGS="/wd4275 /wd4251 /EHsc" -G "Visual Studio 14 2015"
     PREFIX: c:\usr_msvc
+    MSVC:
+    MINGW32: rem
+  - CMAKE_ARGS: -DCMAKE_C_COMPILER=mingw32-gcc -DCMAKE_CXX_COMPILER=mingw32-g++ -DCMAKE_MAKE_PROGRAM=mingw32-make.exe -DCMAKE_VERBOSE_MAKEFILE=ON -DSDL2PP_ENABLE_LIVE_TESTS=OFF -DSDL2PP_WITH_WERROR=YES -G "MinGW Makefiles"
+    PREFIX: c:\usr_mingw32
+    MINGW32:
+    MSVC: rem
 
 before_build:
 - |-
@@ -21,4 +31,9 @@ build:
   project: C:\projects\project-n2de\2D_Engine\2D_Engine.sln
   verbosity: normal
 
-platform: x64
+build_script:
+- |-
+   set PATH=%PREFIX%\lib;%PATH%
+   %MSVC% set PATH=%APPVEYOR_BUILD_FOLDER%\Debug;%PATH%
+    %MINGW32% set PATH=%APPVEYOR_BUILD_FOLDER%;%PATH%
+    ctest -V
