@@ -1,23 +1,40 @@
-version: D0.1.{build}
-
-configuration: Release
-
-environment:
-  global:
-    PROJECT_NAME: project-n2de
+version: '{branch}.{build}'
 
 image: Visual Studio 2017
-   
-platform: x64
+clone_depth: 1
 
 
-before_build:  
-  # Install SDL2.
-  - ps: Start-FileDownload https://www.libsdl.org/release/SDL2-devel-2.0.8-VC.zip -FileName sdl2.zip
-  - ps: Expand-Archive sdl2.zip -DestinationPath sdl2
-  - set LIB=%LIB%;C:\projects\project-n2de\s2D_Engine\Dependencies\SDL2
+
+
+before_build:
+   - |-
+     set PREFIX=C:\usr
+     
+  - git submodule update --init --recursive
+  
+  # depends are only fetched where there's no cache
+  - if exist %PREFIX% set DEPENDS=rem
+  
+  - |-
+    %DEPENDS% mkdir %PREFIX%\include\SDL2
+    %DEPENDS% mkdir %PREFIX%\lib
+    %DEPENDS% cd %TEMP%
+    
+  #SDL2
+  - |-
+    %DEPENDS% appveyor DownloadFile https://www.libsdl.org/release/SDL2-devel-2.0.8-VC.zip
+    %DEPENDS% 7z x SDL2-devel-2.0.8-VC.zip > nul
+    %DEPENDS% copy SDL2-2.0.8\%ARCH%\include\SDL2\* %PREFIX%\include\SDL2 > nul
+    %DEPENDS% copy SDL2-2.0.8\%ARCH%\lib\*.a %PREFIX%\lib > nul
+    %DEPENDS% copy SDL2-2.0.8\%ARCH%\bin\*.dll %PREFIX%\lib > nul
 
   
-build:
-  project: C:\projects\project-n2de\2D_Engine\2D_Engine.sln
-  verbosity: normal
+build_script:
+  - |-
+    cd %APPVEYOR_BUILD_FOLDER%
+    del "C:\Program Files\Git\usr\bin\sh.exe"
+
+# Build
+  - |-
+    copy %PREFIX%\lib\SDL2.dll C:\project-n2de
+    copy %PREFIX%\lib\SDL2_image.dll C:\project-n2de
