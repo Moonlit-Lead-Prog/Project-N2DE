@@ -10,10 +10,10 @@ environment:
   PREFIX: c:\usr_msvc
     
 before_build:
-  %NEEDDEPENDS% %MSVC% appveyor DownloadFile http://www.libsdl.org/release/SDL2-devel-2.0.8-VC.zip
-  %NEEDDEPENDS% %MSVC% 7z x SDL2-devel-2.0.8-VC.zip > nul
-  %NEEDDEPENDS% %MSVC% copy SDL2-2.0.8\include\* %PREFIX%\include > nul
-  %NEEDDEPENDS% %MSVC% copy SDL2-2.0.8\lib\x64\* %PREFIX%\lib > nul
+  %NEEDDEPENDS% appveyor DownloadFile http://www.libsdl.org/release/SDL2-devel-2.0.8-VC.zip
+  %NEEDDEPENDS% 7z x SDL2-devel-2.0.8-VC.zip > nul
+  %NEEDDEPENDS% copy SDL2-2.0.8\include\* %PREFIX%\include > nul
+  %NEEDDEPENDS% copy SDL2-2.0.8\lib\x64\* %PREFIX%\lib > nul
   
   7z x SDL2-devel-2.0.8-VC.zip > nul 
   
