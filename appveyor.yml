@@ -28,8 +28,6 @@ build:
 build_script:
 - |-
    cd %APPVEYOR_BUILD_FOLDER%
-   cmake -DCMAKE_PREFIX_PATH=%PREFIX% %CMAKE_ARGS% .
-   cmake --build
    
    %MINGW32% type FindSDL2PP.cmake
    %MINGW32% type sdl2pp.pc
