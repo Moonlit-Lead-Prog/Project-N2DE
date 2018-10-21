@@ -18,7 +18,7 @@ before_build:
    %NEEDDEPENDS% copy SDL2-2.0.8\lib\x64\*  %PREFIX%\lib > nul
   
 build:
-  #project: C:\Project-N2DE\2D_Engine\2D_Engine.sln
+  project: C:\projects\project-n2de\2D_Engine\2D_GameEngine\2D_Engine.sln
   verbosity: normal
 
 platform: x64
