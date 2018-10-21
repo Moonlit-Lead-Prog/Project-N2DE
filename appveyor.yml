@@ -18,7 +18,7 @@ before_build:
   - ps: "Start-FileDownload https://www.libsdl.org/projects/SDL_image/release/SDL2_image-devel-2.0.3-VC.zip"
   - cmd: "7z x SDL2_image-devel-2.0.3-VC.zip"
   
-  - cmd: "set SDL2_DEVEL_PATH=%APPVEYOR_BUILD_FOLDER%\\SDL2-%SDL2_VERSION%"
+  - cmd: "set SDL2_DEVEL_PATH=%APPVEYOR_BUILD_FOLDER%\\SDL2-devel-2.0.8-VC"
   - cmd: "set PATH=C:\\MinGW\\bin;%PATH%"
   
 build:
