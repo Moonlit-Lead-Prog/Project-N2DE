@@ -1,14 +1,26 @@
 version: D0.1.{build}
 
-configuration: Release
+configuration: Debug
 
 image: Visual Studio 2017
 
+
+
+environment:
+  PREFIX: c:\usr_msvc
+    
+before_build:
+
 install:
-  appveyor DownloadFile https://www.libsdl.org/release/SDL2-devel-2.0.8-VC.zip 
-  appveyor DownloadFile https://www.libsdl.org/projects/SDL_image/release/SDL2_image-devel-2.0.3-VC.zip 
+  %NEEDDEPENDS% %MSVC% appveyor DownloadFile http://www.libsdl.org/release/SDL2-devel-2.0.8-VC.zip
+  %NEEDDEPENDS% %MSVC% 7z x SDL2-devel-2.0.8-VC.zip > nul
+  %NEEDDEPENDS% %MSVC% copy SDL2-2.0.8\include\* %PREFIX%\include > nul
+  %NEEDDEPENDS% %MSVC% copy SDL2-2.0.8\lib\x64\* %PREFIX%\lib > nul
   
   7z x SDL2-devel-2.0.8-VC.zip > nul 
   
 build:
+  project: 2D_Engine.sln
   verbosity: normal
+
+platform: x64
