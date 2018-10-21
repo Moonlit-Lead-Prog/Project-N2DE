@@ -1,13 +1,20 @@
-﻿  Vector2D.cpp
-  Game.cpp
-c:\users\unityingames\desktop\project-n2de\2d_engine\2d_gameengine\engine\ecs\transformcomponent.h(23): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\unityingames\desktop\project-n2de\2d_engine\2d_gameengine\engine\ecs\transformcomponent.h(24): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\unityingames\desktop\project-n2de\2d_engine\2d_gameengine\engine\ecs\transformcomponent.h(38): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-c:\users\unityingames\desktop\project-n2de\2d_engine\2d_gameengine\engine\ecs\transformcomponent.h(39): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-c:\users\unityingames\desktop\project-n2de\2d_engine\2d_gameengine\engine\ecs\keyboardcontroller.h(29): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-c:\users\unityingames\desktop\project-n2de\2d_engine\2d_gameengine\engine\ecs\keyboardcontroller.h(30): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-  main.cpp
-  Map.cpp
-  TextureManager.cpp
-  Generating Code...
-  2D_GameEngine.vcxproj -> C:\Users\UnityInGames\Desktop\Project-N2DE\2D_Engine\x64\Debug\2D_GameEngine.exe
+﻿  Game.cpp
+c:\users\unityingames\desktop\project-n2de\2d_engine\2d_gameengine\engine\ecs\transformcomponent.h(10): error C3646: 'Vector2': unknown override specifier
+c:\users\unityingames\desktop\project-n2de\2d_engine\2d_gameengine\engine\ecs\transformcomponent.h(10): error C3646: 'position': unknown override specifier
+c:\users\unityingames\desktop\project-n2de\2d_engine\2d_gameengine\engine\ecs\transformcomponent.h(10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\unityingames\desktop\project-n2de\2d_engine\2d_gameengine\engine\ecs\transformcomponent.h(17): error C2065: 'position': undeclared identifier
+c:\users\unityingames\desktop\project-n2de\2d_engine\2d_gameengine\engine\ecs\transformcomponent.h(18): error C2065: 'position': undeclared identifier
+c:\users\unityingames\desktop\project-n2de\2d_engine\2d_gameengine\engine\ecs\transformcomponent.h(23): error C2065: 'position': undeclared identifier
+c:\users\unityingames\desktop\project-n2de\2d_engine\2d_gameengine\engine\ecs\transformcomponent.h(24): error C2065: 'position': undeclared identifier
+c:\users\unityingames\desktop\project-n2de\2d_engine\2d_gameengine\engine\ecs\transformcomponent.h(35): error C2065: 'position': undeclared identifier
+c:\users\unityingames\desktop\project-n2de\2d_engine\2d_gameengine\engine\ecs\transformcomponent.h(36): error C2065: 'position': undeclared identifier
+c:\users\unityingames\desktop\project-n2de\2d_engine\2d_gameengine\engine\ecs\transformcomponent.h(38): error C2065: 'position': undeclared identifier
+c:\users\unityingames\desktop\project-n2de\2d_engine\2d_gameengine\engine\ecs\transformcomponent.h(39): error C2065: 'position': undeclared identifier
+c:\users\unityingames\desktop\project-n2de\2d_engine\2d_gameengine\engine\ecs\spritecomponent.h(36): error C2039: 'position': is not a member of 'TransformComponent'
+  c:\users\unityingames\desktop\project-n2de\2d_engine\2d_gameengine\engine\ecs\transformcomponent.h(6): note: see declaration of 'TransformComponent'
+c:\users\unityingames\desktop\project-n2de\2d_engine\2d_gameengine\engine\ecs\spritecomponent.h(37): error C2039: 'position': is not a member of 'TransformComponent'
+  c:\users\unityingames\desktop\project-n2de\2d_engine\2d_gameengine\engine\ecs\transformcomponent.h(6): note: see declaration of 'TransformComponent'
+c:\users\unityingames\desktop\project-n2de\2d_engine\2d_gameengine\engine\ecs\keyboardcontroller.h(29): error C2039: 'position': is not a member of 'TransformComponent'
+  c:\users\unityingames\desktop\project-n2de\2d_engine\2d_gameengine\engine\ecs\transformcomponent.h(6): note: see declaration of 'TransformComponent'
+c:\users\unityingames\desktop\project-n2de\2d_engine\2d_gameengine\engine\ecs\keyboardcontroller.h(30): error C2039: 'position': is not a member of 'TransformComponent'
+  c:\users\unityingames\desktop\project-n2de\2d_engine\2d_gameengine\engine\ecs\transformcomponent.h(6): note: see declaration of 'TransformComponent'

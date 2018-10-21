@@ -6,7 +6,7 @@
 class TransformComponent : public Component
 {
 public:
-
+	fasdf
 	Vector2 position;
 	Vector2 velocity;
 
