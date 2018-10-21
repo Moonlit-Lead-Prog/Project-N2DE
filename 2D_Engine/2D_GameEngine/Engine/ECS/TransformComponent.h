@@ -5,8 +5,7 @@
 
 class TransformComponent : public Component
 {
-public:t
-	est
+public:
 	Vector2 position;
 	Vector2 velocity;
 
