@@ -10,7 +10,6 @@ before_build:
    - |-
     %DEPENDS% mkdir %PREFIX%\include\SDL2
     %DEPENDS% mkdir %PREFIX%\lib
-    %DEPENDS% cd %TEMP%
     
     %DEPENDS% appveyor DownloadFile https://www.libsdl.org/release/SDL2-devel-2.0.8-VC.zip
     %DEPENDS% 7z x SDL2-devel-2.0.8-VC.zip > nul
