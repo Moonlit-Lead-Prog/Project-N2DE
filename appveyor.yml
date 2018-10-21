@@ -10,10 +10,6 @@ image: Visual Studio 2017
    
 platform: x64
 
-environment:
-    PREFIX: c:\usr_msvc
-    MSVC:
-    MINGW32: rem
 
 before_build:  
   # Install SDL2.
