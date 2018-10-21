@@ -11,8 +11,7 @@ environment:
     MSVC:
     MINGW32: rem
 
-before_build:
-- |-   
+before_build:  
   - ps: "Start-FileDownload https://www.libsdl.org/release/SDL2-devel-$($env:SDL2_VERSION)-VC.zip"
   - cmd: "7z x SDL2-devel-%SDL2_VERSION%-VC.zip"
   - ps: "Start-FileDownload https://www.libsdl.org/projects/SDL_image/release/SDL2_image-devel-$($env:SDL2_IMAGE_VERSION)-VC.zip"
