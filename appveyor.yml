@@ -16,9 +16,4 @@ before_build:
     %DEPENDS% copy SDL2-2.0.8\include\* C:\projects\project-n2de\2D_Engine\2D_GameEngine > nul
     %DEPENDS% copy SDL2-2.0.8\lib\x64\* C:\projects\project-n2de\2D_Engine\2D_GameEngine > nul
 
-build_script:
-  - |-
-    cd %APPVEYOR_BUILD_FOLDER%
-    del "C:\Program Files\Git\usr\bin\sh.exe"
-
 build:
