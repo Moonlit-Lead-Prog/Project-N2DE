@@ -15,7 +15,7 @@ before_build:
   # Install SDL2.
   - ps: Start-FileDownload https://www.libsdl.org/release/SDL2-devel-2.0.8-VC.zip -FileName sdl2.zip
   - ps: Expand-Archive sdl2.zip -DestinationPath sdl2
-  - set LIB=%LIB%;C:\projects\project-n2de\sdl2\SDL2-2.0.5\lib\x64
+  - set LIB=%LIB%;C:\projects\project-n2de\sdl2\SDL2-2.0.8\lib\x64
 
   
 build:
