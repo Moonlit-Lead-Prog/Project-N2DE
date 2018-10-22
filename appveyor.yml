@@ -3,4 +3,4 @@ version: '{branch}.{build}'
 image: Visual Studio 2017
 
 install:
-  - nuget Install-Package sdl2 -Version 2.0.5
+  #- nuget Install-Package sdl2 -Version 2.0.5
