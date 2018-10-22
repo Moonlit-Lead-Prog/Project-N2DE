@@ -1,4 +1,3 @@
 version: '{branch}.{build}'
 
 image: Visual Studio 2017
-
